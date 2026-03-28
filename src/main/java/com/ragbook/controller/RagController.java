@@ -1,6 +1,7 @@
 package com.ragbook.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,20 +25,11 @@ public class RagController {
 	@Autowired
 	private RagService ragService;
 	
-	 @PostMapping("/upload")
-	 @Operation(
-		        summary = "Upload a PDF file",
-		        description = "Upload a PDF to be processed by RAG system",
-		        		requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
-		                        		    content = @Content(
-		                                mediaType = "multipart/form-data",
-		                                schema = @Schema(type = "string", format = "binary")
-		                        )
-		                )
-		)
-	    public String uploadPdf(@RequestParam("file") MultipartFile file) {
-	        return ragService.savePdf(file);
-	    }
+	@PostMapping(value = "/upload", consumes = "multipart/form-data")
+    @Operation(summary = "Upload a PDF file", description = "Upload a PDF to be processed by the RAG system")
+    public String uploadPdf(@RequestParam("file") MultipartFile file) {
+        return ragService.savePdf(file);
+    }
 	  
 	    @PostMapping("/ask")
 	    public String askQuestion(@RequestBody QuestionRequest request ) {
