@@ -77,6 +77,7 @@ The application enables users to upload PDF books and ask natural language quest
 7. The question is converted into an embedding.
 8. Similar document chunks are retrieved.
 9. Retrieved context is sent to Google Gemini.
+   
 10.Gemini generates a grounded response based on the retrieved content.
 
 ---
