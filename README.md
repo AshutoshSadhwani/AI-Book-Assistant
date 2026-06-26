@@ -41,27 +41,27 @@ The application enables users to upload PDF books and ask natural language quest
 ```text
               PDF Upload
                    │
-                   ▼
+                   
           Apache PDFBox
                    │
-                   ▼
+                   
     TokenTextSplitter (Chunking)
                    │
-                   ▼
+                   
  HuggingFace Embedding Model
    (all-MiniLM-L6-v2 ONNX)
                    │
-                   ▼
+                   
       MariaDB Vector Store
                    │
      Semantic Similarity Search
                    │
-                   ▼
+                   
      Retrieved Context Chunks
                    │
-                   ▼
+                   
      Google Gemini 2.5 Flash
                    │
-                   ▼
+                   
         AI Generated Answer
 ```
