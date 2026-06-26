@@ -65,3 +65,19 @@ The application enables users to upload PDF books and ask natural language quest
                    
         AI Generated Answer
 ```
+
+---
+RAG Workflow
+1. User uploads a PDF.
+2. Apache PDFBox extracts the text.
+3. Text is split into semantic chunks.
+4. Each chunk is converted into a 384-dimensional embedding.
+5. Embeddings are stored inside MariaDB Vector Store.
+6. User submits a question.
+7. The question is converted into an embedding.
+8. Similar document chunks are retrieved.
+9. Retrieved context is sent to Google Gemini.
+10.Gemini generates a grounded response based on the retrieved content.
+
+---
+
