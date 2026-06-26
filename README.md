@@ -67,7 +67,7 @@ The application enables users to upload PDF books and ask natural language quest
 ```
 
 ---
-RAG Workflow
+## RAG Workflow
 1. User uploads a PDF.
 2. Apache PDFBox extracts the text.
 3. Text is split into semantic chunks.
